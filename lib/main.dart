@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
-
+import 'errand_list_screen.dart';
 void main() {
-  runApp(const MyApp());
+  runApp(const
+      MaterialApp(
+        title: 'Navigation Basics',
+        home: MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -9,9 +13,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-
-
     return MaterialApp(
       home: Scaffold(
         // body: Column(
@@ -57,14 +58,82 @@ class MyApp extends StatelessWidget {
                 width: 335, height: 40,
 
               ),
-              Container(
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(12.0),
-                  child: Image.asset(
-                    'assets/Rectangle_1848_1.png',
-                    fit: BoxFit.fill,
-                  width: 335, height: 172,),
-                )
+              Center(
+                child: Container(
+                  //padding: EdgeInsets.fromLTRB(left, top, right, bottom),
+                  margin: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                  width: 335, height: 172,
+                  // child: ClipRRect(
+                  //   borderRadius: BorderRadius.circular(12.0),
+                  //   child: Image.asset(
+                  //     'assets/Rectangle_1848_1.png',
+                  //     fit: BoxFit.fill,
+                  //   width: 335, height: 172,),
+                  // )
+                  child: Stack(
+                    children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(12.0),
+                        child: Image.asset(
+                        'assets/Rectangle_1848_1.png',
+                        fit: BoxFit.fill,
+                      color: Colors.black.withOpacity(0.2),
+                          colorBlendMode: BlendMode.darken,
+                      width: 335, height: 172,),
+                      ),
+                      Container(
+                        padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text('EVENT',
+                            style: TextStyle(
+                              fontSize: 22,
+                              fontWeight: FontWeight.w300,
+                              color: Colors.white,
+                            ),),
+                            Text('SEVENTEEN Photo',
+                              style: TextStyle(
+                                fontSize: 22,
+                                fontWeight: FontWeight.w800,
+                                color: Colors.white,
+                              ),),
+                            Text('지금 이벤트 참가하고 세븐틴 굿즈 받기',
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w300,
+                                color: Colors.white,
+                              ),),
+                            SizedBox(
+                              height: 32,
+                            ),
+                            Row(
+                              children: [
+                                SizedBox(
+                                  width: 4,
+                                ),
+                                Icon(Icons.circle, color: Colors.white.withOpacity(1), size: 8,),
+                                SizedBox(
+                                  width: 9,
+                                ),
+                                Icon(Icons.circle, color: Colors.white.withOpacity(0.5), size: 8,),
+                                SizedBox(
+                                  width: 9,
+                                ),
+                                Icon(Icons.circle, color: Colors.white.withOpacity(0.5), size: 8,),
+                                SizedBox(
+                                  width: 9,
+                                ),
+                                Icon(Icons.circle, color: Colors.white.withOpacity(0.5), size: 8,),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
               Container(
                 padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
@@ -109,13 +178,23 @@ class MyApp extends StatelessWidget {
                         fontWeight: FontWeight.w800,
                       ),),
                     Spacer(),
-                    Text('더보기',
-                      style: TextStyle(
-                        fontSize: 13,
-                        color: Color(0xffB1B1B4),
-                        fontWeight: FontWeight.w500,
-                      ),),
-                    Icon(Icons.arrow_forward_ios, size: 13, color: Color(0xffB1B1B4),)
+                    TextButton(onPressed: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => ErrandListScreen()),
+                      );
+                    },
+                        child: Row(
+                          children: [
+                            Text('더보기',
+                              style: TextStyle(
+                                fontSize: 13,
+                                color: Color(0xffB1B1B4),
+                                fontWeight: FontWeight.w500,
+                              ),),
+                            Icon(Icons.arrow_forward_ios, size: 13, color: Color(0xffB1B1B4),)
+                          ],
+                    )),
                   ],
                 ),
               ),
@@ -299,7 +378,41 @@ class MyApp extends StatelessWidget {
                       ),
                     ],
                   ),
-                )
+                ),
+              Container(
+                margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
+                padding: EdgeInsets.fromLTRB(19, 19, 19, 19),
+                decoration: BoxDecoration(
+                  color: Color(0xffF7FFE7),
+                  borderRadius: BorderRadius.circular(12)
+                ),
+                height: 86,
+                width: 335,
+                child: Row(
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Color(0xffDBFFAC),
+                        shape: BoxShape.circle,
+                      ),
+                      height: 48, width: 48,
+                      child: Center(child: Text('Tip!', style: TextStyle(fontWeight: FontWeight.w800, fontSize: 16),)),
+                    ),
+                    Container(
+                      margin: EdgeInsets.fromLTRB(16, 0, 0, 0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('덕부름 이용 방법', style: TextStyle(fontWeight: FontWeight.w800, fontSize: 16),),
+                          SizedBox(height: 5,),
+                          Text('덕부름의 이용 방법을 알아보세요!', style: TextStyle(fontWeight: FontWeight.w500, fontSize: 13, color: Color(0xff3E3E40)),),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              )
             ],
           )
         ),
@@ -314,7 +427,7 @@ class MyApp extends StatelessWidget {
                 Icon(Icons.home),
                 Icon(Icons.calendar_month),
                 Icon(Icons.message),
-                Icon(Icons.account_box)
+                Icon(Icons.account_box),
               ],
             ),
           ),
