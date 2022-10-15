@@ -1,0 +1,45 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+    title: 'Navigation Basics',
+    home: ErrandListScreen(),
+  ));
+}
+
+class ErrandListScreen extends StatelessWidget {
+  const ErrandListScreen({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('심부름',
+              style: TextStyle(color: Color(0xff1F1F21),  fontSize: 17, fontWeight: FontWeight.w800)
+          ),
+          backgroundColor: Colors.white,
+          elevation: 0.0,
+          centerTitle: true,
+        ),
+        body: Center(
+        ),
+        bottomNavigationBar: BottomAppBar(
+          color: Color(0xffF8F8F8),
+          child: Container(
+            height: 54,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Icon(Icons.home),
+                Icon(Icons.calendar_month),
+                Icon(Icons.message),
+                Icon(Icons.account_box),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
