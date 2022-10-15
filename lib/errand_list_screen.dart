@@ -15,7 +15,12 @@ class ErrandListScreen extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('덕부름'),
+          title: Text('심부름',
+              style: TextStyle(color: Color(0xff1F1F21),  fontSize: 17, fontWeight: FontWeight.w800)
+          ),
+          backgroundColor: Colors.white,
+          elevation: 0.0,
+          centerTitle: true,
         ),
         body: Center(
         ),

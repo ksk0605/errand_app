@@ -29,16 +29,18 @@ class MyApp extends StatelessWidget {
           ),
           backgroundColor: Colors.white,
           elevation: 0.0,
+          centerTitle: false,
         ),
         body: Center(
-          child: Column(
+          child: ListView(
+            padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
             children: [
               Container(
                 decoration: BoxDecoration(
                   color: Color(0xffF8F8F8),
                   borderRadius: BorderRadius.circular(8.0)
                 ),
-                margin: EdgeInsets.fromLTRB(20, 8, 20, 20),
+                margin: EdgeInsets.fromLTRB(0, 8, 0, 20),
                 padding: EdgeInsets.fromLTRB(13, 0, 0, 0),
                 child: Row(children: [
                   Text('공지 ',
@@ -60,107 +62,120 @@ class MyApp extends StatelessWidget {
               ),
               Center(
                 child: Container(
-                  //padding: EdgeInsets.fromLTRB(left, top, right, bottom),
-                  margin: EdgeInsets.fromLTRB(20, 0, 20, 0),
-                  width: 335, height: 172,
-                  // child: ClipRRect(
-                  //   borderRadius: BorderRadius.circular(12.0),
-                  //   child: Image.asset(
-                  //     'assets/Rectangle_1848_1.png',
-                  //     fit: BoxFit.fill,
-                  //   width: 335, height: 172,),
-                  // )
-                  child: Stack(
-                    children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(12.0),
-                        child: Image.asset(
-                        'assets/Rectangle_1848_1.png',
-                        fit: BoxFit.fill,
-                      color: Colors.black.withOpacity(0.2),
-                          colorBlendMode: BlendMode.darken,
-                      width: 335, height: 172,),
-                      ),
-                      Container(
-                        padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text('EVENT',
-                            style: TextStyle(
-                              fontSize: 22,
-                              fontWeight: FontWeight.w300,
-                              color: Colors.white,
-                            ),),
-                            Text('SEVENTEEN Photo',
+                    //padding: EdgeInsets.fromLTRB(left, top, right, bottom),
+                    //margin: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                    width: 335, height: 172,
+                    // child: ClipRRect(
+                    //   borderRadius: BorderRadius.circular(12.0),
+                    //   child: Image.asset(
+                    //     'assets/Rectangle_1848_1.png',
+                    //     fit: BoxFit.fill,
+                    //   width: 335, height: 172,),
+                    // )
+                    child: Stack(
+                      children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(12.0),
+                          child: Image.asset(
+                          'assets/Rectangle_1848_1.png',
+                          fit: BoxFit.fill,
+                        color: Colors.black.withOpacity(0.2),
+                            colorBlendMode: BlendMode.darken,
+                        height: 172,),
+                        ),
+                        Container(
+                          padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text('EVENT',
                               style: TextStyle(
                                 fontSize: 22,
-                                fontWeight: FontWeight.w800,
-                                color: Colors.white,
-                              ),),
-                            Text('지금 이벤트 참가하고 세븐틴 굿즈 받기',
-                              style: TextStyle(
-                                fontSize: 12,
                                 fontWeight: FontWeight.w300,
                                 color: Colors.white,
                               ),),
-                            SizedBox(
-                              height: 32,
-                            ),
-                            Row(
-                              children: [
-                                SizedBox(
-                                  width: 4,
-                                ),
-                                Icon(Icons.circle, color: Colors.white.withOpacity(1), size: 8,),
-                                SizedBox(
-                                  width: 9,
-                                ),
-                                Icon(Icons.circle, color: Colors.white.withOpacity(0.5), size: 8,),
-                                SizedBox(
-                                  width: 9,
-                                ),
-                                Icon(Icons.circle, color: Colors.white.withOpacity(0.5), size: 8,),
-                                SizedBox(
-                                  width: 9,
-                                ),
-                                Icon(Icons.circle, color: Colors.white.withOpacity(0.5), size: 8,),
-                              ],
-                            ),
-                          ],
+                              Text('SEVENTEEN Photo',
+                                style: TextStyle(
+                                  fontSize: 22,
+                                  fontWeight: FontWeight.w800,
+                                  color: Colors.white,
+                                ),),
+                              Text('지금 이벤트 참가하고 세븐틴 굿즈 받기',
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w300,
+                                  color: Colors.white,
+                                ),),
+                              SizedBox(
+                                height: 32,
+                              ),
+                              Row(
+                                children: [
+                                  SizedBox(
+                                    width: 4,
+                                  ),
+                                  Icon(Icons.circle, color: Colors.white.withOpacity(1), size: 8,),
+                                  SizedBox(
+                                    width: 9,
+                                  ),
+                                  Icon(Icons.circle, color: Colors.white.withOpacity(0.5), size: 8,),
+                                  SizedBox(
+                                    width: 9,
+                                  ),
+                                  Icon(Icons.circle, color: Colors.white.withOpacity(0.5), size: 8,),
+                                  SizedBox(
+                                    width: 9,
+                                  ),
+                                  Icon(Icons.circle, color: Colors.white.withOpacity(0.5), size: 8,),
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
               ),
               Container(
-                padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                margin: EdgeInsets.fromLTRB(20,20,20,40),
+                padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                margin: EdgeInsets.fromLTRB(0,20,0,40),
                 decoration: BoxDecoration(
                     color: Color(0xff1F1F21),
                   borderRadius: BorderRadius.circular(12)
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
+                child: Row(
                   children: [
-                    Text(
-                      '심부름 신청하러 가기',
-                      style: TextStyle(
-                          fontSize: 16,
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          '심부름 신청하러 가기',
+                          style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w800,
+                        ),),
+                        SizedBox(
+                          height: 5.0,
+                        ),
+                        Text('덕질 관련 심부름을 신청해 보세요!',
+                        style: TextStyle(
+                          fontSize: 14,
                           color: Colors.white,
-                          fontWeight: FontWeight.w800,
-                    ),),
-                    SizedBox(
-                      height: 5.0,
+                          fontWeight: FontWeight.w400,),
+                        ),
+                      ],
                     ),
-                    Text('덕질 관련 심부름을 신청해 보세요!',
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.white,
-                      fontWeight: FontWeight.w400,),
+                    Spacer(),
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Color(0xff3E3E40),
+                        shape: BoxShape.circle,
+                      ),
+                      height: 40, width: 40,
+                      child: Center(child: Icon(Icons.arrow_forward_sharp, size: 20, color: Colors.white,)),
                     ),
                   ],
                 ),
@@ -168,7 +183,7 @@ class MyApp extends StatelessWidget {
               ),
               Container(
                 color: Colors.white,
-                margin: EdgeInsets.fromLTRB(24,0, 24,0),
+                margin: EdgeInsets.fromLTRB(4,0, 4,0),
                 child: Row(
                   children: [
                     Text('최근 등록된 심부름',
@@ -199,7 +214,7 @@ class MyApp extends StatelessWidget {
                 ),
               ),
               Container(
-                margin: EdgeInsets.fromLTRB(20, 14, 20, 0),
+                margin: EdgeInsets.fromLTRB(0, 14, 0, 0),
                 height: 144, width: 335,
                   child: ListView(
                     shrinkWrap: true,
@@ -380,7 +395,7 @@ class MyApp extends StatelessWidget {
                   ),
                 ),
               Container(
-                margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
+                margin: EdgeInsets.fromLTRB(0, 20, 0, 20),
                 padding: EdgeInsets.fromLTRB(19, 19, 19, 19),
                 decoration: BoxDecoration(
                   color: Color(0xffF7FFE7),
@@ -406,7 +421,12 @@ class MyApp extends StatelessWidget {
                         children: [
                           Text('덕부름 이용 방법', style: TextStyle(fontWeight: FontWeight.w800, fontSize: 16),),
                           SizedBox(height: 5,),
-                          Text('덕부름의 이용 방법을 알아보세요!', style: TextStyle(fontWeight: FontWeight.w500, fontSize: 13, color: Color(0xff3E3E40)),),
+                          Row(
+                            children: [
+                              Text('덕부름의 이용 방법을 알아보세요! ', style: TextStyle(fontWeight: FontWeight.w500, fontSize: 13, color: Color(0xff3E3E40)),),
+                              Icon(Icons.arrow_forward_ios, size: 12.5, color: Color(0xff3E3E40),)
+                            ]
+                          )
                         ],
                       ),
                     )
