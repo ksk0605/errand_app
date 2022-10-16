@@ -252,20 +252,39 @@ class MyApp extends StatelessWidget {
                                   fontSize: 14,
                                   fontWeight: FontWeight.w800,
                                 ),),
-                              Container(
-                                  padding: EdgeInsets.fromLTRB(8, 8, 8, 8),
-                                  width: 90,
-                                  height: 30,
-                                  decoration: BoxDecoration(
-                                    color: Color(0xffF8F8F8),
-                                    borderRadius: BorderRadius.circular(16),
+                              Row(
+                                children: [
+                                  Container(
+                                      padding: EdgeInsets.fromLTRB(8, 8, 8, 8),
+                                      width: 80,
+                                      height: 30,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xffF8F8F8),
+                                        borderRadius: BorderRadius.circular(16),
+                                      ),
+                                      child: Center(child: Text('팬싸 대리응모',
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.w800,
+                                          color: Color(0xff3C88FA),
+                                          fontSize: 11,
+                                        ),),
+                                      )
                                   ),
-                                  child: Center(child: Text('팬싸 대리응모',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w800,
+                                  SizedBox(width: 6,),
+                                  Container(
+                                    decoration: BoxDecoration(
                                       color: Color(0xff3C88FA),
-                                      fontSize: 11,
-                                    ),), )
+                                      shape: BoxShape.circle,
+                                    ),
+                                    height: 26, width: 26,
+                                    child: Center(child: Text('+2',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w800,
+                                        color: Colors.white,
+                                        fontSize: 11,
+                                      ),)),
+                                  ),
+                                ],
                               ),
                               Text('8/6 오후 8:00',
                                 style: TextStyle(
